@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    display: flex;
+    flex-direction:column ;
+}
+
+.header-text{
+    align-self: center;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 34px;
+    gap: 10px;
+}
+.weather-widgets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.extra-info{
+    display: flex;
+    justify-content: space-around;
+}
+#weather-icon{
+    width: 100px;
+    height: 100px;
+}
