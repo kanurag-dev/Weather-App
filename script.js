@@ -35,12 +35,10 @@ async function searchWeather(){
 }
 
 async function latLon(city) {
+    errorMessage.textContent="";
     if(city===""){
         errorMessage.textContent="Enter a city";
         return;
-    }
-    else{
-        errorMessage.textContent="";
     }
     let resp= await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=76425e6bfb934598122c119a5a8c5f08`)
 
@@ -73,9 +71,10 @@ async function getWeather(lat,lon) {
 function setWeather(dat) {
 
     weather.textContent=dat[0];
-    humidity.textContent=dat[3];
-    windSpeed.textContent=dat[2];
-    temp.textContent=dat[1];
+    
+    humidity.textContent = `${dat[3]}%`;
+    windSpeed.textContent = `${dat[2]} m/s`;
+    temp.textContent=`${dat[1]}°C`;
     cityName.textContent=dat[4];
     inputSearchText.value="";
     weatherIcon.src=weatherIcon.src = `https://openweathermap.org/img/wn/${dat[5]}@2x.png`;
